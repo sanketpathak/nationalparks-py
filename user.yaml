@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: sanketpathak
+  title: Sanket Pathak
+spec:
+  profile:
+    displayName: Sanket Pathak
+    email: sanketpathak95@gmail.com
+  memberOf: [janus-authors]
