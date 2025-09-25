@@ -21,8 +21,8 @@ data:
       providers:
         github:
           development:
-            clientId: Ov23liPqd4OufVm1cDZA
-            clientSecret: d16468059374a1953a0034e9acffe31b872bc47a
+            clientId: Ov23liL1jMVm1tKC89c6
+            clientSecret: c2e506536354338f6016f6939de7f4992024ed05
             # clientId: Ov23liL1jMVm1tKC89c6
             # clientSecret: c2e506536354338f6016f6939de7f4992024ed05
             ## uncomment if using GitHub Enterprise
