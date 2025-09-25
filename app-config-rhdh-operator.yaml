@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config-rhdh
+data: 
+  app-config-rhdh.yaml: |
+    app: 
+      title: RedHat Developer Hub
+      baseUrl: <>
+    backend:
+      # Required for authentication. This secret is shared by all backend plugins.
+      # In development mode a temporary secret is automatically created.
+      # See https://backstage.io/docs/auth/service-to-service-auth for
+      # information on the format
+      auth:
+        keys:
+          - secret: 'gh'
+      baseUrl: <>
+    auth:
+      environment: development
+      providers:
+        github:
+          development:
+            clientId: Ov23liPqd4OufVm1cDZA
+            clientSecret: d16468059374a1953a0034e9acffe31b872bc47a
+            # clientId: Ov23liL1jMVm1tKC89c6
+            # clientSecret: c2e506536354338f6016f6939de7f4992024ed05
+            ## uncomment if using GitHub Enterprise
+            # enterpriseInstanceUrl: ${AUTH_GITHUB_ENTERPRISE_INSTANCE_URL}
+            ## uncomment to set lifespan of user session
+            # sessionDuration: { hours: 24 } # supports `ms` library format (e.g. '24h', '2 days'), ISO duration, "human duration" as used in code
+            signIn:
+              resolvers:
+                # See https://backstage.io/docs/auth/github/provider#resolvers for more resolvers
+                - resolver: usernameMatchingUserEntityName
