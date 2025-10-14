@@ -1,0 +1,37 @@
+app-config-rhdh.yaml: |
+    app:
+      title: Red Hat Developer Hub
+    integrations:
+      github:
+        - host: github.com
+          # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
+          # about setting up the GitHub integration here: https://backstage.io/docs/integrations/github/locations#configuration
+          token: ghp_
+        ### Example for how to add your GitHub Enterprise instance using the API:
+        # - host: ghe.example.net
+        #   apiBaseUrl: https://ghe.example.net/api/v3
+        #   token: ${GHE_TOKEN}
+    auth:
+      environment: development
+      providers:
+        guest:
+          dangerouslyAllowOutsideDevelopment: true
+        github:
+          development:
+            # clientId: Ov23liPqd4OufVm1cDZA
+            # clientSecret: d16468059374a1953a0034e9acffe31b872bc47a
+            clientId: Ov23liL1jMVm1tKC89c6
+            clientSecret: c2e506536354338f6016f6939de7f4992024ed05
+    catalog:
+      import:
+        entityFilename: catalog-info.yaml
+        pullRequestBranchName: backstage-integration
+      rules:
+        - allow: [Component, System, Group, Resource, Location, Template, API, User]
+      locations:
+        - type: url
+          target: https://github.com/sanketpathak/nationalparks-py/blob/master/user.yaml
+        # - type: file
+        #   target: /Users/spathak/Documents/rhdh/user.yaml
+
+        - type: url
